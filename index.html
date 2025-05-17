@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>夏遊話題抽籤機</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f9f9f9;
+      padding: 2em;
+    }
+    h1 {
+      font-size: 1.8em;
+    }
+    button {
+      padding: 0.8em 1.5em;
+      font-size: 1em;
+      margin: 0.5em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+    }
+    #questionBox {
+      margin-top: 2em;
+      font-size: 1.2em;
+      font-weight: bold;
+      min-height: 4em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎲 夏遊話題抽籤機</h1>
+  <p>點選一個類型開始抽題：</p>
+  <button onclick="draw('fun')">🌀 輕鬆奇想</button>
+  <button onclick="draw('deep')">🌊 深刻分享</button>
+  <button onclick="draw('mixed')">🎯 混合抽題</button>
+
+  <div id="questionBox"></div>
+
+  <script>
+    const fun = [
+      "最近一次覺得自己是怪咖的情況是什麼？",
+      "最近有什麼行為讓你覺得自己很像長輩？",
+      "你最近最著迷的一個冷門小知識或迷因是什麼？",
+      "最近有沒有哪一瞬間讓你覺得『啊我真的變了』？",
+      "你曾經為了一個超級小的事情感到爆氣或超級開心嗎？",
+      "最近有沒有一個小癖好被別人發現後你覺得很好笑？",
+      "你現在手機裡最無厘頭的一張照片是什麼？",
+      "最近一次笑到不行是因為什麼？",
+      "最近在什麼場合忍不住翻白眼？",
+      "你最近聽過最離譜的一句話是什麼？"
+    ];
+
+    const deep = [
+      "最近一次讓你覺得『其實我好像還不錯』的是什麼時刻？",
+      "你最近對『自由』這個詞的感受有變化嗎？",
+      "現在的生活中，有沒有一個小小的『安定感』來自哪裡？",
+      "最近有沒有一件事讓你意識到自己其實很有韌性？",
+      "最近你有為了什麼東西在忍耐？",
+      "有沒有一件事是你覺得很小，但還是默默耿耿於懷？",
+      "最近有哪個情境讓你突然很想家，或很想某個人？",
+      "最近學到的一個讓自己舒服一點的小方法是什麼？",
+      "你最近有刻意為自己保留什麼空間嗎？是什麼？",
+      "有沒有一個時刻，讓你想『我不想再這樣下去了』？"
+    ];
+
+    function draw(type) {
+      let pool = [];
+      if (type === 'fun') pool = fun;
+      else if (type === 'deep') pool = deep;
+      else pool = fun.concat(deep);
+
+      const randomIndex = Math.floor(Math.random() * pool.length);
+      document.getElementById("questionBox").innerText = pool[randomIndex];
+    }
+  </script>
+</body>
+</html>
