@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>夏遊話題抽籤機</title>
+  <title>皺友出題所</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Noto Sans TC', sans-serif;
       text-align: center;
-      background: #f9f9f9;
+      background-color: #98D98E; /* 若竹色 */
+      color: #333;
       padding: 2em;
     }
     h1 {
-      font-size: 1.8em;
+      font-size: 2em;
+      color: #8B81C3; /* 藤色 */
+      margin-bottom: 1em;
     }
     button {
       padding: 0.8em 1.5em;
@@ -21,19 +25,27 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      background-color: #007bff;
+      background-color: #C85179; /* 深緋色 */
       color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #b0446b;
     }
     #questionBox {
       margin-top: 2em;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: bold;
       min-height: 4em;
+      background: rgba(255,255,255,0.7);
+      padding: 1em;
+      border-radius: 12px;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <h1>🎲 夏遊話題抽籤機</h1>
+  <h1>🎲 皺友出題所</h1>
   <p>點選一個類型開始抽題：</p>
   <button onclick="draw('fun')">🌀 輕鬆奇想</button>
   <button onclick="draw('deep')">🌊 深刻分享</button>
